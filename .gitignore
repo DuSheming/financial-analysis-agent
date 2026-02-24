@@ -1,0 +1,190 @@
+# ============ Python ============
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# ============ Environment Variables ============
+# CRITICAL: Never commit secrets!
+.env
+.env.local
+.env.*.local
+*.env
+
+# ============ IDEs and Editors ============
+# VSCode
+.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# ============ Operating System ============
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ============ Logs ============
+logs/
+*.log
+log/
+*.log.*
+
+# ============ Project Specific ============
+# 数据缓存（如果你添加了缓存功能）
+cache/
+data/cache/
+*.cache
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+
+# 输出报告（如果你保存 JSON/PDF 报告）
+reports/
+output/
+*.json.bak
+*.pdf
+
+# 备份文件
+*.bak
+*.backup
+*~
+
+# ============ LangChain / LangGraph ============
+# LangSmith trace 数据（如果使用）
+.langsmith/
+langsmith_traces/
+
+# ============ AkShare ============
+# AkShare 可能生成的缓存
+.akshare/
+
+# ============ Testing ============
+# pytest
+.pytest_cache/
+test-results/
+playwright-report/
+test-output/
+
+# ============ Documentation ============
+# 如果你生成了本地文档
+docs/_build/
+site/
+
+# ============ Git ============
+*.orig
+*.rej
+
+# ============ Database (如果添加本地存储) ============
+*.db
+*.sqlite
+*.sqlite3
+
+# ============ Ignore Original Files ============
+# 如果你重命名了原始的 agents.py 等
+agents.py.old
+config.py.old
+main.py.old

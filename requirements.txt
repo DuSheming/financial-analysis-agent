@@ -1,0 +1,30 @@
+# Core LangChain & LangGraph
+langchain>=1.2.10
+langgraph>=1.1.0
+langchain-core>=0.2.0
+langchain-openai>=0.1.8
+langchain-community>=0.0.40
+
+# Data & Financial Analysis
+akshare>=1.18.0
+pandas>=2.0.0
+numpy>=1.24.0
+pandas-ta>=0.4.0
+
+# Utilities
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+requests>=2.31.0
+sqlalchemy>=2.0.0
+python-dateutil>=2.8.2
+
+# Logging
+loguru>=0.7.0
+
+# Development & Testing
+pytest>=7.0.0
+# CLI & Reporting
+rich>=13.7.0
+typer>=0.9.0
+matplotlib>=3.5.0
+jinja2>=3.0.0
