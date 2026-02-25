@@ -1,24 +1,22 @@
 # 金融分析 Multi-Agent 系统
 
-> 项目已完整搭建。请直接阅读**快速开始**部分。
-
 ---
 
 ## 🚀 快速开始（5分钟）
 
 ### 前置条件
-- ✅ Python 3.10+ 虚拟环境（已设置：`agents`）
+- ✅ 创建Python 3.10+ 虚拟环境
 - ✅ 依赖包已安装（`requirements.txt`）
-- ✅ `.env` 已配置（API Keys 已填写）
+- ✅ `.env` 已配置
 
 ### 方式 1️⃣ : 交互式菜单（推荐新手）
 
 ```bash
 # 激活环境
-conda activate agents
+conda activate xxx
 
 # 进入项目目录
-cd Desktop/agent
+cd 文件地址
 
 # 运行交互模式
 python main.py
@@ -94,10 +92,10 @@ python main.py "分析 AAPL，给出 6 个月短期建议"
 编辑 `.env`，修改 `LLM_PROVIDER` 切换：
 
 ```bash
-LLM_PROVIDER=kimi        # 当前使用：Kimi（快速、国内）
-# LLM_PROVIDER=claude    # 备选：Claude（费用高、质量好）
-# LLM_PROVIDER=deepseek  # 备选：DeepSeek（便宜、快）
-# LLM_PROVIDER=qwen      # 备选：Qwen（国产）
+LLM_PROVIDER=kimi        
+# LLM_PROVIDER=claude    
+# LLM_PROVIDER=deepseek  
+# LLM_PROVIDER=qwen     
 ```
 
 ### 时间参数调整
@@ -231,63 +229,6 @@ DATA_FETCH_TIMEOUT=30
 LOG_LEVEL=INFO
 ```
 
----
-
-## 🚀 快速开始
-
-1. **创建虚拟环境**
-   ```bash
-   python -m venv venv
-   source venv/Scripts/activate  # Windows
-   ```
-
-2. **安装依赖**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **配置 LLM**
-   ```bash
-   cp .env.example .env
-   # 编辑 .env，填入至少一个 LLM 的 API key 和 base_url
-   ```
-
-4. **运行分析**
-   ```bash
-   python main.py "分析 600519.SH 股票，给出长期投资建议"
-   ```
-
----
-
-## 📁 项目结构
-
-```
-agent/
-├── README.md                   # 本文件（项目说明）
-├── requirements.txt            # Python 依赖
-├── .env.example                # 配置模板
-├── .env                        # 实际配置（不上传）
-├── config.py                   # 多 LLM 工厂 + 常量
-├── state.py                    # LangGraph 状态定义
-├── tools/
-│   ├── __init__.py
-│   ├── data_tools.py          # AkShare 数据获取
-│   ├── technical_tools.py     # 技术指标计算
-│   └── fundamental_tools.py   # 基本面分析
-├── agents/
-│   ├── __init__.py
-│   ├── planner.py
-│   ├── data_agent.py
-│   ├── technical_agent.py
-│   ├── fundamental_agent.py
-│   ├── reviewer.py
-│   └── decider.py
-├── graph.py                    # LangGraph 工作流
-└── main.py                     # 应用入口
-```
-
----
-
 ## 🔧 工作流程
 
 ```
@@ -319,32 +260,6 @@ END (输出完整报告)
 - **优雅降级**：数据缺失时继续进行分析，完整度得分跟踪
 - **结构化输出**：JSON 格式报告，易于集成
 
----
-
-## 📊 输出示例
-
-```json
-{
-  "recommendation": "HOLD",
-  "confidence": 0.72,
-  "entry_price": 165.0,
-  "stop_loss": 150.0,
-  "target_price": 200.0,
-  "holding_period": "6-12 months",
-  "technical_view": {
-    "trend": "混合信号",
-    "overbought_signals": ["RSI > 70"],
-    "bullish_signals": ["MA20 > MA60"]
-  },
-  "fundamental_view": {
-    "valuation": "偏高",
-    "pe_ratio": 40,
-    "growth_rate": "15% YoY"
-  },
-  "risks": ["高估值", "短期技术超买"],
-  "opportunities": ["长期基本面强劲", "消费复苏预期"]
-}
-```
 
 ---
 
