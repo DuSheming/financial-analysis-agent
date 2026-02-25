@@ -157,15 +157,50 @@ def _print_summary(state, console):
 def main():
     """
     智能入口：
-    - 无参数   → 交互式菜单
+    - 无参数   → 交互模式选择（菜单式 或 智能对话式）
     - 有参数   → 命令行直接分析
     """
     args = sys.argv[1:]
 
     if not args:
-        # 交互模式
-        from cli.interactive import run_interactive
-        run_interactive()
+        # 交互模式 - 让用户选择
+        from rich.console import Console
+        from rich.prompt import Prompt
+
+        console = Console()
+        console.print(
+            """
+[bold cyan]╔═══════════════════════════════════╗
+║  选择交互模式                     ║
+╚═══════════════════════════════════╝[/bold cyan]
+
+[bold][1][/bold] 📋 传统菜单式交互
+   - 经典菜单选择
+   - 逐步指引
+   - 熟悉的操作方式
+
+[bold][2][/bold] 💬 智能对话式交互 (推荐) ⭐ NEW
+   - 自然语言对话
+   - 多轮连续交互
+   - 自动意图识别
+   - LLM 智能决策
+"""
+        )
+
+        choice = Prompt.ask(
+            "[cyan]请选择[/cyan]", choices=["1", "2"], default="2"
+        )
+
+        if choice == "2":
+            # 新的智能对话式交互
+            from cli.smart_interactive import run_smart_interactive
+
+            run_smart_interactive()
+        else:
+            # 原有的菜单式交互
+            from cli.interactive import run_interactive
+
+            run_interactive()
     else:
         # 命令行直接模式
         request = " ".join(args)
